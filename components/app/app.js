@@ -136,7 +136,9 @@
 	});
 
 	function formBtnClickHandler () {
-		task.addTask( form.getInputText() );
+		let text = form.getInputText();
+		form.setInputText();
+		if (text) task.addTask(text);
 	}
 
 	task.on('formBtnClick', formBtnClickHandler)

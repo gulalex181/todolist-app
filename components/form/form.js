@@ -39,6 +39,10 @@
 			return this._input.value;
 		}
 
+		setInputText () {
+			return this._input.value = '';
+		}
+
 	}
 
 

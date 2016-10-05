@@ -32,6 +32,14 @@
 			this._list.append(li);
 		}
 
+		deleteTask (task) {
+			let li = document.createElement('li');
+			li.className = 'task__item';
+			li.textContent = task;
+
+			this._list.append(li);
+		}
+
 	}
 
 
