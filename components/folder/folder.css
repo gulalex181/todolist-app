@@ -1,0 +1,17 @@
+.folder {
+	background-color: #F8F8F8;
+}
+
+.folder__list {
+	list-style: none;
+}
+
+.folder__item {
+	cursor: pointer;
+	padding: 10px 20px;
+	background-color: #F3F3F3;
+}
+
+.folder__item:hover {
+	background-color: #F0FFFE;
+}

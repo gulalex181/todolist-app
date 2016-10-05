@@ -1,5 +1,4 @@
 .list {
-	background-color: #F8F8F8;
 }
 
 .list__list {
@@ -7,11 +6,23 @@
 }
 
 .list__item {
+	text-align: center;
 	cursor: pointer;
-	padding: 10px 20px;
-	background-color: #F3F3F3;
+	margin-top: 10px;
+	padding: 5px 20px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #DCEEDD;
+	position: relative;
 }
 
-.list__item:hover {
-	background-color: #F0FFFE;
+.list__delete {
+	position: absolute;
+	color: #227F15;
+	font-size: 16px;
+	height: 35px;
+	line-height: 35px;
+	width: 35px;
+	top: 0;
+	right: 12px;
 }

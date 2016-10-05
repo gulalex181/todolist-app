@@ -2,6 +2,10 @@
 	'use strict';
 
 	class Form {
+		/**
+		 * Конструктор формы.
+		 * @param {Object} options - объект настроек.
+		 */
 		constructor (options) {
 			this._elem = options.elem;
 
@@ -9,6 +13,9 @@
 			this._initEvents();
 		}
 
+		/**
+		 * Отрисовка формы.
+		 */
 		_render () {
 			this._elem.innerHTML = '';
 
@@ -22,29 +29,44 @@
 
 			this._btn = document.createElement('button');
 			this._btn.className = 'form__button';
-			this._btn.innerHTML = '&#43;'
+			this._btn.innerHTML = '+'
 			form.append(this._btn);
 		}
 
+		/**
+		 * Инициализация событий.
+		 */
 		_initEvents () {
 			this._btn.addEventListener('click', this._btnOnClick.bind(this));
 		}
 
+		/**
+		 * Обработчик клика по кнопке формы.
+		 * @param {Object} event - объект события клика.
+		 */
 		_btnOnClick (event) {
 			event.preventDefault();
+
+			// Включение события клика по кнопке формы в шине событий.
 			this.trigger('formBtnClick');
 		}
 
+		/**
+		 * Возвращает введенный в поле ввода формы текст.
+		 * @returs {String} - введенный текст.
+		 */
 		getInputText () {
 			return this._input.value;
 		}
 
-		setInputText () {
-			return this._input.value = '';
+		/**
+		 * Изменяет текст в поле ввода формы.
+		 * @param {Object} text - нужный текст.
+		 */
+		setInputText (text) {
+			this._input.value = text;
 		}
-
 	}
-
 
 	// Export
 	window.Form = Form;
