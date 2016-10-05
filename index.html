@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Проект To-Do List</title>
-	<link href="favicon.ico" rel="icon" type="image/x-icon">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="components/form/form.css">
+	<link rel="stylesheet" href="components/task/task.css">
+	<link rel="stylesheet" href="components/list/list.css">
+	<link rel="stylesheet" href="components/app/app.css">
 </head>
 <body>
 	<!-- 
@@ -18,7 +22,20 @@
 	5. JSDoc 
 	-->
 
-	<div class="list"></div>
+	<div class="container">
+		<div class="four column">
+			<div class="list js-list"></div>
+		</div>
+		<div class="eight column">
+			<div class="form js-form"></div>
+			<div class="task js-task"></div>
+		</div>
+	</div>
 
+
+	<script src="components/form/form.js"></script>
+	<script src="components/task/task.js"></script>
+	<script src="components/list/list.js"></script>
+	<script src="components/app/app.js"></script>
 </body>
 </html>

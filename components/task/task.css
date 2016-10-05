@@ -1,0 +1,14 @@
+.task {
+}
+
+.task__list {
+	list-style: none;
+}
+
+.task__item {
+	text-align: center;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 5px 20px;
+	background-color: #DCEEDD;
+}

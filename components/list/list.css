@@ -1,0 +1,17 @@
+.list {
+	background-color: #F8F8F8;
+}
+
+.list__list {
+	list-style: none;
+}
+
+.list__item {
+	cursor: pointer;
+	padding: 10px 20px;
+	background-color: #F3F3F3;
+}
+
+.list__item:hover {
+	background-color: #F0FFFE;
+}

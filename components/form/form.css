@@ -1,0 +1,32 @@
+.form {
+	background-color: #F8F8F8;
+}
+
+.form__form {
+	position: relative;
+}
+
+.form__input {
+	display: block;
+	font-size: 18px;
+	line-height: 28px;
+	height: 28px;
+	width: 100%;
+	margin: 0;
+	padding: 5px 25px;
+	border: 1px solid #B3DFAC;
+}
+
+.form__button {
+	border: 0;
+	background-color: #B3DFAC;
+	color: #227F15;
+	height: 40px;
+	line-height: 40px;
+	font-size: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	padding: 0 20px;
+}
