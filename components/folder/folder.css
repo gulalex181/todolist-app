@@ -25,5 +25,5 @@
 }
 
 .folder__item:hover {
-	background-color: hsla(176, 31%, 62%, .2);
+	background-color: hsl(176, 31%, 92%);
 }

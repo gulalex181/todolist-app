@@ -19,7 +19,6 @@
 	background-color: hsl(176, 29%, 47%);
 
 	color: hsl(0, 0%, 90%);
-	font-size: 18px;
 }
 
 .form__button {
@@ -37,7 +36,7 @@
 	background-color: hsl(176, 34%, 42%);
 
 	color: hsl(0, 0%, 90%);
-	font-size: 30px;
+	font-size: 3rem;
 
 	cursor: pointer;
 }
