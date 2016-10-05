@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"hint": "jshint components/**/*.js"
+		// "hint": "jshint components/**/*.js",
+		// "pages": "git push origin master:gh-pages"
 	},
 	"repository": {
 		"type": "git",
