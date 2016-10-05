@@ -58,7 +58,7 @@ font-weight: normal;
 }
 
 
-html {
+html, * {
 	font: 10px "Open Sans", Verdana, Arial;
 }
 
