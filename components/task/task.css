@@ -10,5 +10,19 @@
 	cursor: pointer;
 	margin-top: 10px;
 	padding: 5px 20px;
+	height: 25px;
+	line-height: 25px;
 	background-color: #DCEEDD;
+	position: relative;
+}
+
+.task__delete {
+	position: absolute;
+	color: #227F15;
+	font-size: 16px;
+	height: 35px;
+	line-height: 35px;
+	width: 35px;
+	top: 0;
+	right: 12px;
 }
