@@ -53,6 +53,26 @@ text-align: left;
 font-weight: normal;
 }
 
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+
+html {
+	font: 10px "Open Sans", Verdana, Arial;
+}
+
+body {
+	background-color: hsl(176, 31%, 62%);
+}
+
+.wrapper {
+	max-width: 800px;
+	margin: 20px auto;
+
+	font-size: 1.4rem;
+}
+
 .container:after {
 	content: '';
 	clear: both;

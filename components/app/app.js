@@ -94,7 +94,7 @@
 		value: {},
 		enumerable: false,
 		writable: true
-	})
+	});
 
 	/**
 	 * Примешивает в прототип одного объекта
@@ -120,7 +120,7 @@
 	mixins(List, EVENT_BUS);
 	mixins(Form, EVENT_BUS);
 
-	let folder = new Folder({
+	new Folder({
 		elem: document.querySelector('.js-folder'),
 		data: [
 			{
@@ -182,7 +182,7 @@
 	}
 
 	// Привязываем обработчик к каналу formBtnClick
-	list.on('formBtnClick', formBtnClickHandler)
+	list.on('formBtnClick', formBtnClickHandler);
 
 
 })();

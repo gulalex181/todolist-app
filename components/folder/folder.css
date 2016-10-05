@@ -1,5 +1,5 @@
 .folder {
-	background-color: #F8F8F8;
+	border-radius: 3px;
 }
 
 .folder__list {
@@ -7,11 +7,23 @@
 }
 
 .folder__item {
-	cursor: pointer;
 	padding: 10px 20px;
-	background-color: #F3F3F3;
+
+	background-color: hsl(0, 0%, 97%);
+
+	cursor: pointer;
+}
+
+.folder__item:first-child {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.folder__item:last-child {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 .folder__item:hover {
-	background-color: #F0FFFE;
+	background-color: hsla(176, 31%, 62%, .2);
 }

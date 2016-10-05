@@ -1,21 +1,21 @@
 {
-  "name": "todolist-app",
-  "version": "1.0.0",
-  "description": "SPA To-Do List",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "hint": "jshint *.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gulalex181/todolist-app.git"
-  },
-  "keywords": [],
-  "author": "Alexander Gulnyashkin <gulalex181@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gulalex181/todolist-app/issues"
-  },
-  "homepage": "https://github.com/gulalex181/todolist-app#readme"
+	"name": "todolist-app",
+	"version": "1.0.0",
+	"description": "SPA To-Do List",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"hint": "jshint components/**/*.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gulalex181/todolist-app.git"
+	},
+	"keywords": [],
+	"author": "Alexander Gulnyashkin <gulalex181@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gulalex181/todolist-app/issues"
+	},
+	"homepage": "https://github.com/gulalex181/todolist-app#readme"
 }

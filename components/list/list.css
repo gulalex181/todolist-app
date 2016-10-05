@@ -5,24 +5,32 @@
 	list-style: none;
 }
 
+.list__item:first-child {
+	margin-top: 20px;
+}
+
 .list__item {
-	text-align: center;
-	cursor: pointer;
-	margin-top: 10px;
-	padding: 5px 20px;
-	height: 25px;
-	line-height: 25px;
-	background-color: #DCEEDD;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 5px;
+	padding: 0 25px;
 	position: relative;
+
+	border-radius: 3px;
+
+	background-color: hsl(0, 0%, 97%);
+
+	cursor: pointer;
 }
 
 .list__delete {
 	position: absolute;
-	color: #227F15;
-	font-size: 16px;
-	height: 35px;
-	line-height: 35px;
-	width: 35px;
-	top: 0;
-	right: 12px;
+	line-height: 40px;
+	height: 40px;
+	width: 40px;
+	right: 0;
+
+	color: hsl(176, 29%, 47%);
+	font-size: 1.6rem;
+	text-align: center;
 }

@@ -29,7 +29,7 @@
 
 			this._btn = document.createElement('button');
 			this._btn.className = 'form__button';
-			this._btn.innerHTML = '+'
+			this._btn.innerHTML = '+';
 			form.append(this._btn);
 		}
 

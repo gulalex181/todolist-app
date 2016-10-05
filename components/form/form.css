@@ -1,5 +1,4 @@
 .form {
-	background-color: #F8F8F8;
 }
 
 .form__form {
@@ -8,25 +7,37 @@
 
 .form__input {
 	display: block;
-	font-size: 18px;
-	line-height: 28px;
-	height: 28px;
+	line-height: 40px;
+	height: 40px;
 	width: 100%;
 	margin: 0;
-	padding: 5px 25px;
-	border: 1px solid #B3DFAC;
+	padding: 0 65px 0 25px;
+
+	border: 0;
+	border-radius: 3px;
+
+	background-color: hsl(176, 29%, 47%);
+
+	color: hsl(0, 0%, 90%);
+	font-size: 18px;
 }
 
 .form__button {
-	border: 0;
-	background-color: #B3DFAC;
-	color: #227F15;
-	height: 40px;
-	line-height: 40px;
-	font-size: 30px;
 	position: absolute;
 	top: 0;
 	right: 0;
-	cursor: pointer;
+	line-height: 40px;
+	height: 40px;
 	padding: 0 20px;
+
+	border: 0;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+
+	background-color: hsl(176, 34%, 42%);
+
+	color: hsl(0, 0%, 90%);
+	font-size: 30px;
+
+	cursor: pointer;
 }
