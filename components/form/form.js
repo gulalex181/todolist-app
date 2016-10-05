@@ -6,6 +6,7 @@
 			this._elem = options.elem;
 
 			this._render();
+			this._initEvents();
 		}
 
 		_render () {
@@ -15,14 +16,27 @@
 			form.className = 'form__form';
 			this._elem.append(form);
 
-			let input = document.createElement('input');
-			input.className = 'form__input';
-			form.append(input);
+			this._input = document.createElement('input');
+			this._input.className = 'form__input';
+			form.append(this._input);
 
-			let button = document.createElement('button');
-			button.className = 'form__button';
-			button.innerHTML = '&#43;'
-			form.append(button);
+			this._btn = document.createElement('button');
+			this._btn.className = 'form__button';
+			this._btn.innerHTML = '&#43;'
+			form.append(this._btn);
+		}
+
+		_initEvents () {
+			this._btn.addEventListener('click', this._btnOnClick.bind(this));
+		}
+
+		_btnOnClick (event) {
+			event.preventDefault();
+			this.trigger('formBtnClick');
+		}
+
+		getInputText () {
+			return this._input.value;
 		}
 
 	}
