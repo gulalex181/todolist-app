@@ -169,7 +169,8 @@
 	});
 
 	let form = new Form({
-		elem: document.querySelector('.js-form')
+		elem: document.querySelector('.js-form'),
+		placeholder: 'Новая задача'
 	});
 
 	/**

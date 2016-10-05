@@ -11,7 +11,7 @@
 	height: 40px;
 	width: 100%;
 	margin: 0;
-	padding: 0 65px 0 25px;
+	padding: 3px 65px 0 25px;
 
 	border: 0;
 	border-radius: 3px;
@@ -21,14 +21,19 @@
 	color: hsl(0, 0%, 90%);
 }
 
+.form__input::-webkit-input-placeholder {color: hsl(0, 0%, 90%);}
+.form__input::-moz-placeholder          {color: hsl(0, 0%, 90%);} /* Firefox 19+ */
+.form__input:-moz-placeholder           {color: hsl(0, 0%, 90%);} /* Firefox 18- */
+.form__input:-ms-input-placeholder      {color: hsl(0, 0%, 90%);}
+
 .form__button {
 	position: absolute;
 	top: 0;
 	right: 0;
 	line-height: 40px;
 	height: 40px;
-	padding: 0 20px;
 	margin: 0;
+	padding: 0 20px;
 
 	border: 0;
 	border-top-right-radius: 3px;
@@ -37,7 +42,7 @@
 	background-color: hsl(176, 34%, 42%);
 
 	color: hsl(0, 0%, 90%);
-	font-size: 2.5rem;
+	font: 2.5rem "Open Sans", Verdana, Arial;
 
 	cursor: pointer;
 }
