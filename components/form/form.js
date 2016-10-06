@@ -27,7 +27,6 @@
 			this._input = document.createElement('input');
 			this._input.className = 'form__input';
 			this._input.placeholder = this._placeholder;
-			console.dir(this._input.placeholder);
 			form.append(this._input);
 
 			this._btn = document.createElement('button');
