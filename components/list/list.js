@@ -22,7 +22,7 @@
 
 			this._list = document.createElement('ul');
 			this._list.className = 'list__list';
-			this._elem.append(this._list);
+			this._elem.appendChild(this._list);
 
 			this._data.forEach( item => {
 				this._renderItem(item.content);
@@ -37,12 +37,12 @@
 			let item = document.createElement('li');
 			item.className = 'list__item';
 			item.textContent = content;
-			this._list.append(item);
+			this._list.appendChild(item);
 
 			let del = document.createElement('i');
 			del.className = 'list__delete';
 			del.innerHTML = '🗙';
-			item.append(del);
+			item.appendChild(del);
 		}
 
 		/**

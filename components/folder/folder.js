@@ -21,7 +21,7 @@
 
 			this._list = document.createElement('ul');
 			this._list.className = 'folder__list';
-			this._elem.append(this._list);
+			this._elem.appendChild(this._list);
 
 			this._data.forEach( item => {
 				this._renderItem(item.content);
@@ -36,7 +36,7 @@
 			let item = document.createElement('li');
 			item.className = 'folder__item';
 			item.innerHTML = content;
-			this._list.append(item);
+			this._list.appendChild(item);
 		}
 	}
 

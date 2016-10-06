@@ -22,17 +22,17 @@
 
 			let form = document.createElement('form');
 			form.className = 'form__form';
-			this._elem.append(form);
+			this._elem.appendChild(form);
 
 			this._input = document.createElement('input');
 			this._input.className = 'form__input';
 			this._input.placeholder = this._placeholder;
-			form.append(this._input);
+			form.appendChild(this._input);
 
 			this._btn = document.createElement('button');
 			this._btn.className = 'form__button';
 			this._btn.innerHTML = '+';
-			form.append(this._btn);
+			form.appendChild(this._btn);
 		}
 
 		/**
