@@ -14,6 +14,8 @@
 
 			this.render();
 			this._initEvents();
+
+			this.list = this.elem.querySelector('.list__list');
 		}
 
 		/**
@@ -52,9 +54,8 @@
 		 * @param {String} content - содержание пункта.
 		 */
 		addItem (content) {
-			this._data.push({
-				content: content
-			})
+			console.log(content);
+			this._data.items.push(content);
 			this.render();
 		}
 	}

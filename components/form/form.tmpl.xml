@@ -1,10 +1,6 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
 	<form class="form__form">
-		<input class="form__input" type="text">
-			<fest:attributes>
-				<fest:attribute name="placeholder"><fest:value>data.placeholder</fest:value></fest:attribute>
-			</fest:attributes>
-		</input>
+		<input class="form__input" type="text" placeholder="{data.placeholder}"></input>
 		<button class="form__button">+</button>
 	</form>
 </fest:template>

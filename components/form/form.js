@@ -31,19 +31,49 @@
 		}
 
 		/**
+		 * Привязка обработчика события.
+		 * @param {String} event - имя события
+		 * @param {Function} callback - обработчик события
+		 */
+		on (event, callback) {
+			this.elem.addEventListener(event, callback);
+		}
+
+		/**
+		 * Запуск события.
+		 * @param {String} event - имя события
+		 * @param {Object} data - данные, которые нужно передать в обработчик
+		 */
+		trigger (event, data) {
+			let newEvent = new CustomEvent(event, {
+				bubbles: true,
+				cancelable: true,
+				detail: data
+			})
+
+			this.elem.dispatchEvent(newEvent);
+			console.log(newEvent.detail);
+		}
+
+		/**
 		 * Обработчик клика по кнопке формы.
 		 * @param {Object} event - объект события клика.
 		 */
 		_btnOnClick (event) {
+			event.preventDefault();
+
 			let target = event.target;
 
 			let btn = target.closest('button');
 			if (!btn || !this.elem.contains(btn)) return;
 
-			event.preventDefault();
+			// Запуск события клика по кнопке формы.
+			this.trigger('formBtnClick', {
+				content: this.getInputText()
+			});
 
-			// Включение события клика по кнопке формы в шине событий.
-			this.trigger('formBtnClick');
+			// Сброс поля ввода формы.
+			this.elem.querySelector('input').value = '';
 		}
 
 		/**
@@ -51,15 +81,7 @@
 		 * @returs {String} - введенный текст.
 		 */
 		getInputText () {
-			return this._input.value;
-		}
-
-		/**
-		 * Изменяет текст в поле ввода формы.
-		 * @param {Object} text - нужный текст.
-		 */
-		setInputText (text) {
-			this._input.value = text;
+			return this.elem.querySelector('input').value.trim();
 		}
 	}
 
