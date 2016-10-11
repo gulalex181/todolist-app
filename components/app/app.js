@@ -114,63 +114,98 @@
 	let Folder = window.Folder;
 	let List = window.List;
 	let Form = window.Form;
+	let DragNDrop = window.DragNDrop;
 
 	// Примешивание методов шины событий
 	mixins(Folder, EVENT_BUS);
 	mixins(List, EVENT_BUS);
 	mixins(Form, EVENT_BUS);
+	mixins(DragNDrop, EVENT_BUS);
 
 	new Folder({
 		elem: document.querySelector('.js-folder'),
-		data: [
-			{
-				content: 'Понедельник'
-			},
-			{
-				content: 'Вторник'
-			},
-			{
-				content: 'Среда'
-			},
-			{
-				content: 'Четверг'
-			},
-			{
-				content: 'Пятница'
-			},
-			{
-				content: 'Суббота'
-			},
-			{
-				content: 'Воскресенье'
-			},
-		]
+		data: {
+			items: [
+				{
+					content: 'Понедельник'
+				},
+				{
+					content: 'Вторник'
+				},
+				{
+					content: 'Среда'
+				},
+				{
+					content: 'Четверг'
+				},
+				{
+					content: 'Пятница'
+				},
+				{
+					content: 'Суббота'
+				},
+				{
+					content: 'Воскресенье'
+				},
+			]
+		}
 	});
 
 	let list = new List({
 		elem: document.querySelector('.js-list'),
-		data: [
-			{
-				content: 'Дело номер 1'
-			},
-			{
-				content: 'Дело номер 2'
-			},
-			{
-				content: 'Дело номер 3'
-			},
-			{
-				content: 'Дело номер 4'
-			},
-			{
-				content: 'Дело номер 5'
-			}
-		]
+		data: {
+			items: [
+				{
+					content: 'Дело номер 1'
+				},
+				{
+					content: 'Дело номер 2'
+				},
+				{
+					content: 'Дело номер 3'
+				},
+				{
+					content: 'Дело номер 4'
+				},
+				{
+					content: 'Дело номер 5'
+				},
+				{
+					content: 'Дело номер 1'
+				},
+				{
+					content: 'Дело номер 2'
+				},
+				{
+					content: 'Дело номер 3'
+				},
+				{
+					content: 'Дело номер 4'
+				},
+				{
+					content: 'Дело номер 5'
+				},
+				{
+					content: 'Дело номер 1'
+				},
+				{
+					content: 'Дело номер 2'
+				}
+			]
+		}
 	});
 
 	let form = new Form({
 		elem: document.querySelector('.js-form'),
-		placeholder: 'Новая задача'
+		data: {
+			placeholder: 'Новая задача'
+		}
+	});
+
+	new DragNDrop({
+		container: list.list,
+		placeHolderClass: 'list__item_template',
+		placeHolderText: 'Вставить сюда'
 	});
 
 	/**

@@ -1,45 +1,33 @@
 ;(function () {
 	'use strict';
 
+	let _template = window.fest['form/form.tmpl']
+
 	class Form {
 		/**
 		 * Конструктор формы.
 		 * @param {Object} options - объект настроек.
 		 */
 		constructor (options) {
-			this._elem = options.elem;
-			this._placeholder = options.placeholder;
+			this.elem = options.elem;
+			this._data = options.data;
 
-			this._render();
+			this.render();
 			this._initEvents();
 		}
 
 		/**
 		 * Отрисовка формы.
 		 */
-		_render () {
-			this._elem.innerHTML = '';
-
-			let form = document.createElement('form');
-			form.className = 'form__form';
-			this._elem.appendChild(form);
-
-			this._input = document.createElement('input');
-			this._input.className = 'form__input';
-			this._input.placeholder = this._placeholder;
-			form.appendChild(this._input);
-
-			this._btn = document.createElement('button');
-			this._btn.className = 'form__button';
-			this._btn.innerHTML = '+';
-			form.appendChild(this._btn);
+		render () {
+			this.elem.innerHTML = _template(this._data);
 		}
 
 		/**
 		 * Инициализация событий.
 		 */
 		_initEvents () {
-			this._btn.addEventListener('click', this._btnOnClick.bind(this));
+			this.elem.addEventListener('click', this._btnOnClick.bind(this));
 		}
 
 		/**
@@ -47,6 +35,11 @@
 		 * @param {Object} event - объект события клика.
 		 */
 		_btnOnClick (event) {
+			let target = event.target;
+
+			let btn = target.closest('button');
+			if (!btn || !this.elem.contains(btn)) return;
+
 			event.preventDefault();
 
 			// Включение события клика по кнопке формы в шине событий.

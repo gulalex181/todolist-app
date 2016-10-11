@@ -1,55 +1,34 @@
 ;(function () {
 	'use strict';
 
+	let _template = window.fest['list/list.tmpl'];
+
 	class List {
 		/**
 		 * Конструктор списка.
 		 * @param {Object} options - объект настроек.
 		 */
 		constructor (options) {
-			this._elem = options.elem;
+			this.elem = options.elem;
 			this._data = options.data;
 
-			this._render();
+			this.render();
 			this._initEvents();
 		}
 
 		/**
 		 * Отрисовка списка.
 		 */
-		_render () {
-			this._elem.innerHTML = '';
-
-			this._list = document.createElement('ul');
-			this._list.className = 'list__list';
-			this._elem.appendChild(this._list);
-
-			this._data.forEach( item => {
-				this._renderItem(item.content);
-			});
+		render () {
+			this.elem.innerHTML = _template(this._data);
 		}
 
-		/**
-		 * Отрисовка одного пункта списка.
-		 * @param {String} content - содержание пункта.
-		 */
-		_renderItem (content) {
-			let item = document.createElement('li');
-			item.className = 'list__item';
-			item.textContent = content;
-			this._list.appendChild(item);
-
-			let del = document.createElement('i');
-			del.className = 'list__delete';
-			del.innerHTML = '🗙';
-			item.appendChild(del);
-		}
 
 		/**
 		 * Инициализация событий.
 		 */
 		_initEvents () {
-			this._list.addEventListener('click', this._deleteItem.bind(this));
+			this.elem.addEventListener('click', this._deleteItem.bind(this));
 		}
 
 		/**
@@ -60,10 +39,10 @@
 			let target = event.target;
 
 			let del = target.closest('i');
-			if (!del || !this._list.contains(del)) return;
+			if (!del || !this.elem.contains(del)) return;
 
 			let item = del.closest('li');
-			if (!item || !this._list.contains(item)) return;
+			if (!item || !this.elem.contains(item)) return;
 
 			item.remove();
 		}
@@ -73,7 +52,10 @@
 		 * @param {String} content - содержание пункта.
 		 */
 		addItem (content) {
-			this._renderItem(content);
+			this._data.push({
+				content: content
+			})
+			this.render();
 		}
 	}
 

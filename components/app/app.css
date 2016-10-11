@@ -69,6 +69,7 @@ body {
 .wrapper {
 	max-width: 800px;
 	margin: 20px auto;
+	padding-bottom: 50px;
 
 	font-size: 1.4rem;
 }
