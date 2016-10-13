@@ -2,7 +2,7 @@
 	'use strict';
 
 	// Import
-	let Folder = window.Folder;
+	let Menu = window.Menu;
 	let List = window.List;
 	let Form = window.Form;
 	let DragNDrop = window.DragNDrop;
@@ -13,13 +13,13 @@
 		data: {}
 	});
 
-	let folderModel = new Model({
-		resourse: '/data/folder.json',
+	let menuModel = new Model({
+		resourse: '/data/menu.json',
 		data: {}
 	});
 
-	let folder = new Folder({
-		elem: document.querySelector('.js-folder')
+	let menu = new Menu({
+		elem: document.querySelector('.js-menu')
 	});
 
 	let list = new List({
@@ -44,9 +44,9 @@
 		});
 	});
 
-	folderModel.on('update', data => {
-		folder.setData(data);
-		folder.render();
+	menuModel.on('update', data => {
+		menu.setData(data);
+		menu.render();
 	});
 
 	// Привязываем обработчик к каналу formBtnClick
@@ -54,11 +54,11 @@
 		list.addItem(event.detail);
 	});
 
-	folder.on('itemClick', event => {
-		listModel.fetch(event.detail.index);
+	menu.on('itemClick', event => {
+		listModel.fetch(event.detail.folderIndex, event.detail.listIndex);
 	});
 
-	folderModel.fetch();
+	menuModel.fetch();
 
 
 })();

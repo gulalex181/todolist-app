@@ -18,10 +18,10 @@
 			return this._data;
 		}
 
-		fetch (params = '') {
+		fetch (folder = '', list = '') {
 			// Тут я сделал под разные файлы,
 			// т.к. сервера у меня нет, который мог бы генерировать один файл по GET-параметрам.
-			let resourse = this._resourse.slice(0, -5) + params + this._resourse.slice(-5);
+			let resourse = this._resourse.slice(0, -5) + folder + list + this._resourse.slice(-5);
 			this._makeRequest('GET', resourse);
 		}
 

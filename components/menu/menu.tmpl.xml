@@ -1,0 +1,16 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
+	<ul class="menu__folders js-menu__folders">
+		<fest:for iterate="data.folders" index="i" value="folder">
+		<li class="menu__folder js-menu__folder" data-folder-index="{i}">
+			<p class="menu__title js-menu__title"><fest:value>folder.title</fest:value></p>
+			<ul class="menu__list js-menu__list">
+				<fest:for iterate="folder.items" index="index" value="item">
+				<li class="menu__item" data-list-index="{index}">
+					<fest:value>item.content</fest:value>
+				</li>
+				</fest:for>
+			</ul>
+		</li>
+		</fest:for>
+	</ul>
+</fest:template>

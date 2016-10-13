@@ -1,9 +1,9 @@
 ;(function () {
 	'use strict';
 
-	let _template = window.fest['folder/folder.tmpl'];
+	let _template = window.fest['menu/menu.tmpl'];
 
-	class Folder {
+	class Menu {
 		/**
 		 * Конструктор папки.
 		 * @param {Object} options - объект настроек.
@@ -54,14 +54,15 @@
 		_onFolderClick (event) {
 			let target = event.target;
 
-			if (target.matches('.js-folder__title')) {
-				let list = this.elem.querySelector('.js-folder__list');
-				this._toggle(list);
+			if (target.matches('.js-menu__title')) {
+				let folder = target.closest('.js-menu__folder');
+				this._toggle(folder);
 			}
 
-			if (target.hasAttribute('data-index')) {
+			if (target.hasAttribute('data-list-index')) {
 				let data = {
-					index: target.dataset.index
+					listIndex: target.getAttribute('data-list-index'),
+					folderIndex: target.closest('.js-menu__folder').getAttribute('data-folder-index') + '_'
 				};
 
 				this._trigger('itemClick', data);
@@ -85,14 +86,14 @@
 
 		/**
 		 * Прячет/показывает содержимое папки.
-		 * @param {Object} list - содержимое папки.
+		 * @param {Object} folder - содержимое папки.
 		 */
-		_toggle (list) {
-			this.elem.classList.toggle('folder_open');
+		_toggle (folder) {
+			folder.classList.toggle('menu_open');
 		}
 	}
 
 	// Export
-	window.Folder = Folder;
+	window.Menu = Menu;
 
 })();
