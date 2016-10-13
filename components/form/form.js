@@ -67,9 +67,12 @@
 			if (!btn || !this.elem.contains(btn)) return;
 
 			// Запуск события клика по кнопке формы.
-			this.trigger('formBtnClick', {
-				content: this.getInputText()
-			});
+			let inputText = this.getInputText();
+			if (tinputText !== '') {
+				this.trigger('formBtnClick', {
+					content: inputText
+				});
+			}
 
 			// Сброс поля ввода формы.
 			this.elem.querySelector('input').value = '';

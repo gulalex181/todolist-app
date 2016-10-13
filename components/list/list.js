@@ -53,7 +53,6 @@
 		 * @param {String} content - содержание пункта.
 		 */
 		addItem (content) {
-			console.log(content);
 			this._data.items.push(content);
 			this.render();
 		}
