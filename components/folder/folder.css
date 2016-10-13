@@ -3,6 +3,13 @@
 
 .folder__list {
 	list-style: none;
+	transition: transform 100ms ease-in-out;
+	transform: scaleY(0);
+	transform-origin: 50% 0%;
+}
+
+.folder.folder_open .folder__list {
+	transform: scaleY(1);
 }
 
 .folder__title {
@@ -23,7 +30,11 @@
 	color: hsl(0, 0%, 75%);
 	font: 2.5rem FontAwesome;
 
-	content: "\f107";
+	content: "\f104";
+}
+
+.folder.folder_open .folder__title:after {
+	transform: translate(0, -50%) rotate(-90deg);
 }
 
 .folder__item {

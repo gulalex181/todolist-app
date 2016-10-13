@@ -88,7 +88,7 @@
 		 * @param {Object} list - содержимое папки.
 		 */
 		_toggle (list) {
-			list.hidden = !list.hidden;
+			this.elem.classList.toggle('folder_open');
 		}
 	}
 
