@@ -9,12 +9,12 @@
 	let Model = window.Model;
 
 	let listModel = new Model({
-		resourse: '/data/list.json',
+		resourse: 'todolist-app/data/list.json',
 		data: {}
 	});
 
 	let menuModel = new Model({
-		resourse: '/data/menu.json',
+		resourse: 'todolist-app/data/menu.json',
 		data: {}
 	});
 
