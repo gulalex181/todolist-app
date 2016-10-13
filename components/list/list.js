@@ -8,14 +8,13 @@
 		 * Конструктор списка.
 		 * @param {Object} options - объект настроек.
 		 */
-		constructor (options) {
-			this.elem = options.elem;
-			this._data = options.data;
-
-			this.render();
+		constructor ({elem}) {
+			this.elem = elem;
 			this._initEvents();
+		}
 
-			this.list = this.elem.querySelector('.list__list');
+		setData (data) {
+			this._data = data;
 		}
 
 		/**
@@ -23,8 +22,8 @@
 		 */
 		render () {
 			this.elem.innerHTML = _template(this._data);
+			this.list = this.elem.querySelector('.list__list');
 		}
-
 
 		/**
 		 * Инициализация событий.
