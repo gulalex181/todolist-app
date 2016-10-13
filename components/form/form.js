@@ -68,7 +68,7 @@
 
 			// Запуск события клика по кнопке формы.
 			let inputText = this.getInputText();
-			if (tinputText !== '') {
+			if (inputText !== '') {
 				this.trigger('formBtnClick', {
 					content: inputText
 				});
