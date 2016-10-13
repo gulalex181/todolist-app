@@ -67,9 +67,11 @@
 
 				this._trigger('itemClick', data);
 
-				this.elem.querySelectorAll('.menu__item_active').forEach( item => {
-					item.classList.remove('menu__item_active');
-				});
+				let activeItems = this.elem.querySelectorAll('.menu__item_active');
+				for (let i = 0; i < activeItems.length; i += 1) {
+					activeItems[i].classList.remove('menu__item_active');
+				}
+
 				target.classList.add('menu__item_active');
 			}
 		}
