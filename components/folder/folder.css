@@ -1,27 +1,38 @@
 .folder {
-	border-radius: 3px;
 }
 
 .folder__list {
 	list-style: none;
 }
 
-.folder__item {
+.folder__title {
 	padding: 10px 20px;
+	position: relative;
 
 	background-color: hsl(0, 0%, 97%);
 
 	cursor: pointer;
 }
 
-.folder__item:first-child {
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
+.folder__title:after {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+
+	color: hsl(0, 0%, 75%);
+	font: 2.5rem FontAwesome;
+
+	content: "\f107";
 }
 
-.folder__item:last-child {
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
+.folder__item {
+	padding: 10px 20px;
+	line-height: 1.4rem;
+
+	background-color: hsl(0, 0%, 97%);
+
+	cursor: pointer;
 }
 
 .folder__item:hover {

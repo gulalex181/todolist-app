@@ -10,45 +10,16 @@
 
 	let listModel = new Model({
 		resourse: '/data/list.json',
-		data: {
-			items: [
-				{
-					content: 'Дело номер 1'
-				},
-				{
-					content: 'Дело номер 2'
-				}
-			]
-		}
+		data: {}
 	});
 
-	new Folder({
-		elem: document.querySelector('.js-folder'),
-		data: {
-			items: [
-				{
-					content: 'Понедельник'
-				},
-				{
-					content: 'Вторник'
-				},
-				{
-					content: 'Среда'
-				},
-				{
-					content: 'Четверг'
-				},
-				{
-					content: 'Пятница'
-				},
-				{
-					content: 'Суббота'
-				},
-				{
-					content: 'Воскресенье'
-				},
-			]
-		}
+	let folderModel = new Model({
+		resourse: '/data/folder.json',
+		data: {}
+	});
+
+	let folder = new Folder({
+		elem: document.querySelector('.js-folder')
 	});
 
 	let list = new List({
@@ -62,15 +33,20 @@
 		}
 	});
 
-	new DragNDrop({
-		container: list.list,
-		placeHolderClass: 'list__item_template',
-		placeHolderText: 'Вставить сюда'
-	});
-
 	listModel.on('update', data => {
 		list.setData(data);
 		list.render();
+
+		new DragNDrop({
+			container: document.querySelector('.js-list__list'),
+			placeHolderClass: 'list__item_template',
+			placeHolderText: 'Вставить сюда'
+		});
+	});
+
+	folderModel.on('update', data => {
+		folder.setData(data);
+		folder.render();
 	});
 
 	// Привязываем обработчик к каналу formBtnClick
@@ -78,7 +54,11 @@
 		list.addItem(event.detail);
 	});
 
-	listModel.fetch();
+	folder.on('itemClick', event => {
+		listModel.fetch(event.detail.index);
+	});
+
+	folderModel.fetch();
 
 
 })();

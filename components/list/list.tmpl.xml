@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
-	<ul class="list__list">
+	<ul class="list__list js-list__list">
 		<fest:for iterate="data.items" index="index" value="item">
 		<li class="list__item" data-draggable="true">
 			<fest:value>item.content</fest:value>

@@ -52,7 +52,6 @@
 			})
 
 			this.elem.dispatchEvent(newEvent);
-			console.log(newEvent.detail);
 		}
 
 		/**

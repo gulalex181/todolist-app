@@ -1,7 +1,8 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
-	<ul class="folder__list">
+	<p class="folder__title js-folder__title"><fest:value>data.title</fest:value></p>
+	<ul class="folder__list js-folder__list">
 		<fest:for iterate="data.items" index="index" value="item">
-		<li class="folder__item" data-draggable="true">
+		<li class="folder__item" data-index="{index}">
 			<fest:value>item.content</fest:value>
 		</li>
 		</fest:for>

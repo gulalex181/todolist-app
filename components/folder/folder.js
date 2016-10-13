@@ -8,11 +8,64 @@
 		 * Конструктор папки.
 		 * @param {Object} options - объект настроек.
 		 */
-		constructor (options) {
-			this.elem = options.elem;
-			this._data = options.data;
+		constructor ({elem}) {
+			this.elem = elem;
+			this._initEvents();
+		}
 
-			this.render();
+		/**
+		 * Инициализация событий.
+		 */
+		_initEvents () {
+			this.elem.addEventListener('click', this._onFolderClick.bind(this));
+			this.elem.addEventListener('mousedown', function (event) {
+				event.preventDefault();
+			});
+		}
+
+		/**
+		 * Привязка обработчика события.
+		 * @param {String} event - имя события
+		 * @param {Function} callback - обработчик события
+		 */
+		on (event, callback) {
+			this.elem.addEventListener(event, callback);
+		}
+
+		/**
+		 * Запуск события.
+		 * @param {String} event - имя события
+		 * @param {Object} data - данные, которые нужно передать в обработчик
+		 */
+		_trigger (event, data) {
+			let newEvent = new CustomEvent(event, {
+				bubbles: true,
+				cancelable: true,
+				detail: data
+			})
+
+			this.elem.dispatchEvent(newEvent);
+		}
+
+		/**
+		 * Обработчик клика по папке.
+		 * @param {Object} event - объект события.
+		 */
+		_onFolderClick (event) {
+			let target = event.target;
+
+			if (target.matches('.js-folder__title')) {
+				let list = this.elem.querySelector('.js-folder__list');
+				this._toggle(list);
+			}
+
+			if (target.hasAttribute('data-index')) {
+				let data = {
+					index: target.dataset.index
+				};
+
+				this._trigger('itemClick', data);
+			}
 		}
 
 		/**
@@ -20,6 +73,22 @@
 		 */
 		render () {
 			this.elem.innerHTML = _template(this._data);
+		}
+
+		/**
+		 * Установка содержимого папки.
+		 * @param {Object} data - содержание папки.
+		 */
+		setData (data) {
+			this._data = data;
+		}
+
+		/**
+		 * Прячет/показывает содержимое папки.
+		 * @param {Object} list - содержимое папки.
+		 */
+		_toggle (list) {
+			list.hidden = !list.hidden;
 		}
 	}
 
