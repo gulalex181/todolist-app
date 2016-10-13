@@ -66,6 +66,11 @@
 				};
 
 				this._trigger('itemClick', data);
+
+				this.elem.querySelectorAll('.menu__item_active').forEach( item => {
+					item.classList.remove('menu__item_active');
+				});
+				target.classList.add('menu__item_active');
 			}
 		}
 

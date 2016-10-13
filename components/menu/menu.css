@@ -1,28 +1,28 @@
-.menu {
-}
+.menu {}
+.menu__folders {}
+.menu__folder {}
 
-/*menu__folders
-menu__folder
-menu__title
-menu__list
-menu__item*/
 
+
+/* Стили для списка в папке */
 .menu__list {
-	display: none;
+	position: absolute;
 
-	list-style: none;
-	transition: transform 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
 	transform: scaleY(0);
 	transform-origin: 50% 0%;
 }
 
 .menu__folder.menu_open .menu__list {
-	display: block;
+	position: static;
 	transform: scaleY(1);
 }
 
+
+
+/* Стили для заголовка папки */
 .menu__title {
-	padding: 10px 20px;
+	padding: 10px 32px;
 	position: relative;
 
 	background-color: hsl(0, 0%, 97%);
@@ -30,32 +30,84 @@ menu__item*/
 	cursor: pointer;
 }
 
+.menu__title:before,
 .menu__title:after {
 	position: absolute;
 	top: 50%;
-	right: 10px;
 
 	color: hsl(0, 0%, 75%);
-	font: 2.5rem FontAwesome;
+	font-family: FontAwesome;
 
-	content: "\f104";
 	transform: translate(0, -50%);
 	transition: transform 100ms ease-in-out;
+}
+
+.menu__title:before {
+	left: 10px;
+
+	content: "\f114";
+	font-size: 1.5rem;
+}
+
+.menu__title:after {
+	right: 10px;
+	
+	content: "\f104";
+	font-size: 2rem;
+}
+
+.menu__folder.menu_open .menu__title:before {
+	content: "\f115";
 }
 
 .menu__folder.menu_open .menu__title:after {
 	transform: translate(0, -50%) rotate(-90deg);
 }
 
+
+/* Смена фонового цвета у открытой папки */
+.menu__folder.menu_open .menu__title,
+.menu__folder.menu_open .menu__item {
+	background-color: hsl(0, 0%, 95%);
+}
+
+/* Стили для пункта списка */
 .menu__item {
-	padding: 10px 20px;
 	line-height: 1.4rem;
+	padding: 10px 42px;
+	position: relative;
 
 	background-color: hsl(0, 0%, 97%);
 
 	cursor: pointer;
 }
 
-.menu__item:hover {
-	background-color: hsl(176, 31%, 92%);
+.menu__item:before,
+.menu__item:after {
+	position: absolute;
+	top: 50%;
+
+	color: hsl(0, 0%, 75%);
+	font-family: FontAwesome;
+
+	transform: translate(0, -50%);
+	transition: transform 100ms ease-in-out;
+}
+
+.menu__item:before {
+	left: 20px;
+
+	content: "\f03a";
+	font-size: 1.4rem;
+}
+
+/*.menu__item:after {
+	right: 10px;
+
+	content: "\f104";
+	font-size: 1.5rem;
+}*/
+
+.menu__item_active {
+	background-color: hsl(176, 31%, 92%) !important;
 }
