@@ -3,7 +3,7 @@
 		<fest:for iterate="data.items" index="index" value="item">
 		<li class="list__item" data-draggable="true">
 			<fest:value>item.content</fest:value>
-			<i class="list__delete">🗙</i>
+			<i class="list__delete"></i>
 		</li>
 		</fest:for>
 	</ul>
