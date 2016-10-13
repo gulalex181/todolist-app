@@ -42,7 +42,17 @@
 	background-color: hsl(176, 34%, 42%);
 
 	color: hsl(0, 0%, 90%);
-	font: 2.5rem "Open Sans", Verdana, Arial;
 
 	cursor: pointer;
+}
+
+.form__button:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	font: 1.5rem FontAwesome;
+
+	content: '\f067';
+	transform: translate(-50%, -50%);
 }
